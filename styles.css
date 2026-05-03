@@ -2,6 +2,7 @@
 
 /* IMPORTED FONTS*/
 /* IMPORT "INTER" FROM GOOGLE FONTS"*/
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* CSS RESET */
@@ -64,10 +65,103 @@ table {
 }
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
 
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 body{
+    width: 100%;
     min-width: 400px;
+    background-color: var(--white);
+    color: var(--white);
+    font-family: var(--font);
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+h1,h2,h3,h4,a{
+    font-weight: 700;
+    padding: 8px;
+}
+/* --- HEADER STYLES --- */
+header{
+    color: var(--blue);
+    display: flex;
+    background-color: var(--black);
+}
+
+/*---- MOBILE MEMU -----*/
+
+nav ul{
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    max-height: 0;
+}
+nav h2{
+    visibility: hidden;
+    height: 1px;
+}
+nav li a{
+    display: block;
+    font-family: var(--font);
+    font-size: 1rem;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 300ms ease-in;
+}
+
+nav a:hover, nav input:hover {
+    background-color: var(--blue);
+    color: var(--black);
+}
+
+nav label{
+    cursor: pointer;
+    display: inline-block;
+    padding: 1.5rem;
+    user-select: none;
+}
+
+label span{
+    background-color: var(--white);
+    display: block;
+    height: .25rem;
+    position: relative;
+    transition: background-color 300ms ease-out;
+    width: 2rem;
+}
+
+label span::before, label span::after{
+    background-color: var(--white);
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 200ms ease-out;
+    width: 100%;
+}
+
+label span::before{
+    top: .75rem;
+}
+
+label span::after{
+    top: -.75rem;
+}
+
+input{
+    display: none;
 }
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
@@ -77,7 +171,7 @@ body{
 }
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+.hero {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
@@ -88,14 +182,14 @@ body{
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
+h1::before {
     content: "";
-
+    position: absolute;
     left:-.5rem;
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
-
+    z-index: 1;
 }
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
@@ -116,7 +210,7 @@ body{
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: ;
+    transition: height;
     height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */
