@@ -104,7 +104,6 @@ h3, h2, .container a {
 } 
 
 p{
-    max-width: 55ch;
     padding: 8px;
     font-size: .8rem;
 }
@@ -208,7 +207,7 @@ nav li a{
     text-decoration: none;
     background-color: var(--black);
     color: var(--blue);
-    transition: background-color 300ms ease-in;
+    transition: background-color 300ms;
 }
 
 nav a:hover, nav input:hover {
@@ -339,12 +338,12 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     border-radius: 8px; 
      width: 90%;
     max-width: 1200px;
-    transition: all 500ms ease-in-out;
+    transition: all 300ms ease-in-out;
 }
 
-#services section:hover{
-    transform: translate(0, -10px);
-    transform: scale(1.05);
+#services div section:hover{
+    transform: translate(0 -20px); /* from to neededto get  the pinch look?*/
+    transform: scale(1.1);
 }
 
 #services h3{
@@ -452,12 +451,10 @@ td{
 /*---- CONTACT FORM STYLES----*/
 #contact{
     background-color: var(--black);
-    padding: 5vw;
 }
 
-#contact a{
-    background-color: var(--blue);
-    border-radius: 8px;
+#contact .container{
+    margin: 0 auto;
 }
 
 form{
@@ -472,6 +469,7 @@ label {
    display: block;
    text-align: left;
    font-size: .8rem;
+   padding: 8px 0;
 }
 .contact-form{
     /*display: grid;
@@ -507,6 +505,7 @@ footer{
     color:var(--white);
     text-align: center;
     background-color: var(--black);
+    padding: 32px;
 }
 
 footer p{
@@ -517,8 +516,14 @@ footer a{
     display: inline;
     text-decoration:underline;
     font-weight: 400;
-    list-style: ;
+    color: var(--blue);
+    background-color: transparent;
 }
+
+footer a:hover{
+    background-color: transparent;
+}
+
 /* MEDIA QUERIES (MEDIUM) */ 
     @media all and (min-width:"800px"){
         
