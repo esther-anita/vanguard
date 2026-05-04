@@ -88,10 +88,6 @@ h1,h2,h3,h4,a{
     padding: 16px;
 }
 
-h1{
-    font-size: 1.5rem;
-    width: 10vw;
-}
 
 h2{
     font-size: 1.3rem;
@@ -125,9 +121,10 @@ header{
     color: var(--blue);
     background-color: var(--black);
     filter: drop-shadow(0 0 10px var(--blue));
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -135,7 +132,6 @@ header{
 
 nav ul{
     width: 100%;
-    list-style: none;
     margin: 0 auto;
     padding: 0;
     list-style: none;
@@ -156,6 +152,7 @@ nav li a{
     font-weight: 600;
     text-decoration: none;
     background-color: var(--black);
+    color: var(--blue);
     transition: background-color 300ms ease-in;
 }
 
@@ -169,6 +166,10 @@ nav label{
     display: inline-block;
     padding: 1.5rem;
     user-select: none;
+}
+
+span{
+    margin-left: 40vw;
 }
 
 /*----MAKE THE HAMBURGER! ===*/
@@ -223,6 +224,7 @@ input:checked ~ label span::after{
 
 input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
     top: 0;
+    
 }
 
 /*----MAIN STYLES---*/
@@ -268,12 +270,18 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
 
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
+h1{
+    font-size: 1.15em;
+    width: 16vw;
+    margin-left: 16vw;
+}
+
 h1::before {
     content: "";
     position: absolute;
-    left:-.5rem;
-    width: 3.75rem;
-    height: 3.75rem;
+    left: 1.5em;
+    width: 2em;
+    height: 2em;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
     
 }
