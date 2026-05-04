@@ -67,52 +67,69 @@ table {
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
 * {
     margin: 0 auto;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 body{
     width: 100%;
     min-width: 400px;
+    margin: 0 auto;
     background-color: var(--white);
     color: var(--white);
     font-family: var(--font);
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    display: grid;
-    grid-template-columns: auto;
 }
 
 h1,h2,h3,h4,a{
     font-weight: 700;
     padding: 16px;
-
 }
 
 h1{
-    font-size: 2rem;
+    font-size: 1.5rem;
+    width: 10vw;
 }
 
 h2{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 h3{
     font-size: 1.3rem;
 }
+
+p{
+    max-width: 55ch;
+    padding: 16px;
+    font-size: .8rem;
+    margin: 0 auto;
+}
+
+a{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    text-decoration: none;
+    background-color: var(--blue);
+    border-radius: 8px;
+    padding: 10px 8px;
+    margin-top: 8px;
+    color: var(--white);
+}
+
 /* --- HEADER STYLES --- */
 header{
     color: var(--blue);
     background-color: var(--black);
-    border-bottom: 2px solid var(--blue);
+    filter: drop-shadow(0 0 10px var(--blue));
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
 }
 
-nav{
-    float: right;
-}
 
 /*---- MOBILE MEMU STYLES -----*/
 
@@ -121,6 +138,7 @@ nav ul{
     list-style: none;
     margin: 0 auto;
     padding: 0;
+    list-style: none;
     overflow: hidden;
     text-align: center;
     max-height: 0;
@@ -207,14 +225,27 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     top: 0;
 }
 
+/*----MAIN STYLES---*/
+
+#about, #services h2{
+    color: var(--black);
+}
+
+#contact{
+    background-color: var(--black);
+    padding: 5vw;
+}
 
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
     width: 90%;
     max-width: 1200px;
+}
+
+#services .container{
     margin: 16px auto;
     background-color: var(--blue);
-    padding: 16px;
+    padding: 8px;
     border-radius: 8px; 
 }
 
@@ -228,6 +259,13 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     padding: 1rem;
     overflow: hidden;
 }
+ .hero .container{
+    backdrop-filter: blur(5px);
+    padding-top: 16px;
+    justify-content: space-between;
+}
+
+
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
 h1::before {
