@@ -66,7 +66,6 @@ table {
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
 
-
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 body{
     width: 100%;
@@ -90,9 +89,21 @@ h1,h2,h3{
     animation-name: drop-in;
 }
 
+
+h3, h2, .container a {
+    animation: entry 500ms ease-in forwards;
+}
+@keyframes entry {
+    FROM{
+        translate: 0 -30px;
+    }
+    to{
+        translate 0;
+    }
+} 
+
 h3{
     font-size: 1rem;
-    padding: 8px;
 }
 
 p{
@@ -111,28 +122,12 @@ a{
     color: var(--white);
     font-weight: 600;
 }
-
-h3, h2, .container a {
-    animation: entry 500ms ease-in forwards;
-}
-@keyframes entry {
-    FROM{
-        translate: 0 -30px;
-    }
-    to{
-        translate 0;
-    }
-} 
-
   
-
 a:hover{
     background-color: var(--red);
     transform: scale(1.05);
     transition: all 300ms ease-in ;
     overflow: hidden;
-
-
 }
 
 /* --- HEADER STYLES --- */
@@ -146,8 +141,16 @@ header{
     align-items: center;
 }
 
-
-/*---- MOBILE MEMU STYLES -----*/
+h1{
+    font-size: 1.15rem;
+    width: 16vw;
+    margin-left: 40px;
+    padding: 24px;
+}
+/*---- MOBILE MENU STYLES -----*/
+nav{
+    width: 100%;
+}
 
 nav ul{
     width: 100%;
@@ -162,6 +165,7 @@ nav h2{
     visibility: hidden;
     height: 1px;
 }
+
 nav li a{
     display: block;
     font-family: var(--font);
@@ -170,7 +174,6 @@ nav li a{
     text-transform: uppercase;
     font-weight: 600;
     text-decoration: none;
-    border-radius: 0;
     background-color: var(--black);
     color: var(--blue);
     transition: background-color 300ms ease-in;
@@ -188,7 +191,7 @@ nav label{
     user-select: none;
 }
 
-span{
+nav, span{
     float: right;
 }
 
@@ -222,7 +225,7 @@ label span::after{
     top: -.75rem;
 }
 
-input{
+input[type=checkbox]{
     display: none;
 }
 
@@ -269,15 +272,17 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     max-width: 1200px;
 }
 
-#services .container{
+#services section{
     margin: 16px auto;
     background-color: var(--blue);
     padding: 8px;
     border-radius: 8px; 
+     width: 90%;
+    max-width: 1200px;
     transition: all 500ms ease-in-out;
 }
 
-#services .container:hover{
+#services section:hover{
     transform: translate(0, -10px);
     transform: scale(1.05);
 }
@@ -308,12 +313,7 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
-h1{
-    font-size: 1.15rem;
-    width: 16vw;
-    margin-left: 40px;
-    padding: 24px;
-}
+
 
 h1::before {
     content: "";
@@ -432,9 +432,9 @@ form{
 
 }
 label {
-   width: 50px;
+   width: 50vw;
    display: block;
-   text-align: right;
+   text-align: left;
    margin-right: 8px;
    font-size: .8rem;
 }
@@ -443,7 +443,7 @@ input[type=text], input[type=email], textarea {
    box-sizing: border-box;
    width: 100%;
    padding: 10px;
-   border: 1px solid var(--blue);
+   border: 2px solid var(--blue);
 }
 
 input[type=submit] {
@@ -462,8 +462,9 @@ input[type=submit]:hover {
 }
 
 footer{
-    color:var(--black);
+    color:var(--white);
     text-align: center;
+    background-color: var(--black);
 }
 
 footer div{
