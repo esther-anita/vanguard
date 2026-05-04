@@ -93,6 +93,7 @@ h1,h2,h3{
 h3, h2, .container a {
     animation: entry 500ms ease-in forwards;
 }
+
 @keyframes entry {
     FROM{
         translate: 0 -30px;
@@ -113,7 +114,7 @@ p{
 }
 
 a{
-    display: block;
+    display: inline-block;
     margin: 0 auto;
     width: 200px;
     text-decoration: none;
@@ -130,14 +131,27 @@ a:hover{
     overflow: hidden;
 }
 
+/* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
+.container {
+    width: 90%;
+    max-width: 1200px;
+}
+
 /* --- HEADER STYLES --- */
 header{
     color: var(--blue);
     background-color: var(--black);
     filter: drop-shadow(0 0 10px var(--blue));
+}
+
+header label{
+    width: 80%;
+}
+
+header .container{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: nowrap;
     align-items: center;
 }
 
@@ -147,11 +161,32 @@ h1{
     margin-left: 40px;
     padding: 24px;
 }
-/*---- MOBILE MENU STYLES -----*/
-nav{
-    width: 100%;
+
+/* ADD FLOATING SVG LOGO BEFORE THE H1 */
+
+h1::before {
+    content: "";
+    position: absolute;
+    left: 1.5em;
+    width: 2em;
+    height: 2em;
+    background: url('images/vanguard-logo.svg') no-repeat center/contain;
+    animation: graceful-hover 7s ease-in-out infinite;
 }
 
+@keyframes graceful-hover {
+ 0% {
+    transform: translate(0,-3px);
+ }
+ 50% {
+    transform: translate(0, 3px);
+ }
+100%{
+    transform: translate(0, -3px);
+}
+}
+
+/*---- MOBILE MENU STYLES -----*/
 nav ul{
     width: 100%;
     margin: 0 auto;
@@ -167,7 +202,7 @@ nav h2{
 }
 
 nav li a{
-    display: block;
+    display: inline-block;
     font-family: var(--font);
     font-size: 1rem;
     padding: 1rem;
@@ -193,6 +228,7 @@ nav label{
 
 nav, span{
     float: right;
+    width: 100%;
 }
 
 /*----MAKE THE HAMBURGER! ===*/
@@ -204,7 +240,6 @@ label span{
     position: relative;
     transition: background-color 300ms ease-out;
     width: 2rem;
-    margin-right: 0;
 }
 
 label span::before, label span::after{
@@ -250,6 +285,9 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     top: 0;
 }
 
+
+
+
 /*----MAIN STYLES---*/
 
 #about, #services h2{
@@ -265,12 +303,8 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     background-color: var(--blue);
     border-radius: 8px;
 }
+/* SERVICES STYLES*/
 
-/* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
-.container {
-    width: 90%;
-    max-width: 1200px;
-}
 
 #services section{
     margin: 16px auto;
@@ -287,13 +321,14 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     transform: scale(1.05);
 }
 
-/* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
+/* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash)*/ 
+/*---HERO STYLES---*/
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
     place-items: center;
-    text-align: center;
+    text-align: center;X
     padding: 1rem;
     overflow: hidden;
 }
@@ -312,29 +347,8 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     border-radius: 8px;
 }
 
-/* ADD FLOATING SVG LOGO BEFORE THE H1 */
-
-
-h1::before {
-    content: "";
-    position: absolute;
-    left: 1.5em;
-    width: 2em;
-    height: 2em;
-    background: url('images/vanguard-logo.svg') no-repeat center/contain;
-    animation: graceful-hover 7s ease-in-out infinite;
-}
-
-@keyframes graceful-hover {
- 0% {
-    transform: translate(0,-3px);
- }
- 50% {
-    transform: translate(0, 3px);
- }
-100%{
-    transform: translate(0, -3px);
-}
+.hero a:hover{
+    background-color: var(--red);
 }
 
 /*---SERVICES STYLES---*/
@@ -347,6 +361,10 @@ h1::before {
 #results{
     background-color: var(--blue);
     padding: 16px 0;
+}
+
+.results-container{
+
 }
 
 table{
@@ -429,13 +447,12 @@ td{
 form{
     width: 100%;
     margin: 0 auto;
-
 }
+
 label {
    width: 50vw;
-   display: block;
+   display: inline-block;
    text-align: left;
-   margin-right: 8px;
    font-size: .8rem;
 }
 
@@ -461,14 +478,20 @@ input[type=submit]:hover {
    background-color: var(--red);
 }
 
+
+/*----FOOTER STYLES -----*/
 footer{
     color:var(--white);
     text-align: center;
     background-color: var(--black);
 }
 
-footer div{
+footer p{
     margin: 0 auto;
+}
+
+footer a{
+
 }
 /* MEDIA QUERIES (MEDIUM) */ 
     @media all and (min-width="800px";){
@@ -480,7 +503,7 @@ footer div{
 
 
    
-        #results {
+    #results {
         grid-template-columns: 1fr 1fr;
     }
     .results-container {
