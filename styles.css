@@ -65,10 +65,7 @@ table {
 }
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
-* {
-    margin: 0 auto;
-    box-sizing: border-box; 
-}
+
 
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 body{
@@ -94,14 +91,14 @@ h2{
 }
 
 h3{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    padding: 24px 0 24px 40px;
 }
 
 p{
     max-width: 55ch;
     padding: 16px;
     font-size: .8rem;
-    margin: 0 auto;
 }
 
 a{
@@ -121,8 +118,8 @@ header{
     color: var(--blue);
     background-color: var(--black);
     filter: drop-shadow(0 0 10px var(--blue));
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
@@ -170,6 +167,7 @@ nav label{
 
 span{
     margin-left: 40vw;
+
 }
 
 /*----MAKE THE HAMBURGER! ===*/
@@ -224,7 +222,6 @@ input:checked ~ label span::after{
 
 input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
     top: 0;
-    
 }
 
 /*----MAIN STYLES---*/
@@ -288,6 +285,36 @@ h1::before {
 
 #results{
     background-color: var(--blue);
+    padding: 16px 0;
+}
+
+table{
+    width: 90vw;
+    text-align: center;
+    margin-left: 5vw;
+    padding: 24px;
+}
+
+thead{
+    background-color: black;
+}
+
+th{
+    padding: 24px 0;
+    border: 2px solid var(--charcoal);
+}
+
+tr:nth-of-type(odd){
+    background-color: var(--black);
+}
+
+tr:nth-of-type(even){
+    background-color: var(--charcoal);
+}
+
+td{
+    border: 2px solid var(--charcoal);
+    padding: 16px 24px;
 }
 
 /* THIS ONE IS DONE FOR YOU */
@@ -303,13 +330,13 @@ h1::before {
     padding: 1rem;
     position: relative;
 }
-/* ADD ON TRANSITION ON HEIGHT */
+/* ADD ON TRANSITION ON HEIGHT */ 
 .bar {
     width: 50px;
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: height;
+    transition: "height" 1s 1s;
     height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */
