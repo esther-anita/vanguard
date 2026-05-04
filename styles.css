@@ -79,10 +79,10 @@ body{
     line-height: 1.5;
 }
 
-h1,h2,h3{
+h1,h2, h3 {
     font-weight: 700;
     font-size: 1.5rem;
-    padding: 8px;
+    padding: 24px;
 }
 
 .hero a, h2, h3{
@@ -102,10 +102,6 @@ h3, h2, .container a {
         translate 0;
     }
 } 
-
-h3{
-    font-size: 1rem;
-}
 
 p{
     max-width: 65ch;
@@ -350,25 +346,38 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     transform: scale(1.05);
 }
 
+#services h3{
+    font-size: 1rem;
+    padding: 8px;
+}
 
 /*---RESULTS STYLES ---*/
 #results{
     background-color: var(--blue);
-    padding: 16px 0;
-    width: 100%;
+    padding-bottom: 24px;
 }
 
 .results-container{
-    display: grid;
-    grid-template-columns: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+}
 
-    grid-template-areas: results-table bar-chart;  
+#results-table{
+    max-width: 800px;
+    box-sizing: border-box;
+}
+.results-container h3{
+    font-size: 1.5rem;
+
 }
 
 table{
     text-align: center;
-    margin-left: 5vw;
-    padding: 24px;
+    height: 300px;
+    width: 100%;
 }
 
 thead{
@@ -412,7 +421,7 @@ td{
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: "height" 1s;
+    transition: "height" 200ms ease-in;
     height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */
