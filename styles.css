@@ -84,6 +84,13 @@ header, main, footer{
     margin: 0 auto;
 }
 
+header .container, #about .container, #services .container, #results .container, footer .container, nav .container {
+    margin: 0 auto;
+    padding-top: 16px;
+    box-sizing: border-box;
+
+}
+
 h1,h2, h3 {
     font-weight: 700;
     font-size: 1.5rem;
@@ -114,8 +121,7 @@ p{
 }
 
 a{
-    display: inline-block;
-    margin: 0 auto;
+    display: block;
     text-decoration: none;
     padding: 10px 8px;
     margin-top: 8px;
@@ -123,11 +129,10 @@ a{
     font-weight: 600;
 }
   
-a:hover{
+main a:hover{
     background-color: var(--red);
     transform: scale(1.05);
     transition: all 300ms ease-in ;
-    overflow: hidden;
 }
 
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
@@ -183,23 +188,29 @@ h1::before {
 }
 
 /*---- MOBILE MENU STYLES -----*/
-nav, span{
+nav .container{
+    width: 100%;
+    box-sizing: border-box;
     float: right;
+    display: flex;
+    flex: row;
 }
 
 nav ul{
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     list-style: none;
     overflow: hidden;
     text-align: center;
     max-height: 0;
-    place-items: center;
+    order: 1;
 }
+
 nav h2{
     visibility: hidden;
     height: 1px;
+
 }
 
 nav li a{
@@ -207,6 +218,7 @@ nav li a{
     font-family: var(--font);
     font-size: 1rem;
     padding: 1rem;
+    margin: 0;
     text-transform: uppercase;
     font-weight: 600;
     text-decoration: none;
@@ -218,6 +230,7 @@ nav li a{
 nav a:hover, nav input:hover {
     background-color: var(--blue);
     color: var(--black);
+    transition: all 200ms ease;
 }
 
 nav label{
@@ -225,6 +238,8 @@ nav label{
     display: inline-block;
     padding: 1.5rem;
     user-select: none;
+    width: 2rem;
+    order: 2;
 }
 
 
@@ -237,6 +252,7 @@ label span{
     position: relative;
     transition: background-color 300ms ease-out;
     width: 2rem;
+    margin: 0 auto;
 }
 
 label span::before, label span::after{
@@ -261,7 +277,7 @@ input[type=checkbox]{
     display: none;
 }
 
-input:checked ~ ul {
+input:checked ~ ul  {
     max-height: 500px;
 }
 
@@ -288,11 +304,7 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
 #about, #services h2{
     color: var(--black);
 }
-#about .container, #services .container, #results .container {
-    margin: 0 auto;
-    padding-top: 16px;
 
-}
 /*---HERO STYLES---*/
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash)*/ 
@@ -502,10 +514,11 @@ footer{
     text-align: center;
     background-color: var(--black);
     padding: 32px;
+    box-sizing: border-box;
 }
 
 footer p{
-    margin: 0 auto;
+    text-align: center;
 }
 
 footer a{
